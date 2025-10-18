@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Math Object Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef7fa;
+      margin: 40px;
+      color: #2c3e50;
+    }
+    h1 {
+      text-align: center;
+      color: #2980b9;
+    }
+    .box {
+      background: #eaf2f8;
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px auto;
+      width: 70%;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .title {
+      font-weight: bold;
+      color: #1f618d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Math Object Properties & Methods</h1>
+
+  <div id="output"></div>
+
+  <script>
+    let result = "";
+
+    // Properties (constants)
+    result += `<div class="box"><span class="title">PI (π):</span> ${Math.PI}</div>`;
+    result += `<div class="box"><span class="title">Euler's Number (e):</span> ${Math.E}</div>`;
+    result += `<div class="box"><span class="title">Square root of 2:</span> ${Math.SQRT2}</div>`;
+
+    // Methods
+    result += `<div class="box"><span class="title">Absolute of -9:</span> ${Math.abs(-9)}</div>`;
+    result += `<div class="box"><span class="title">Power (2³):</span> ${Math.pow(2,3)}</div>`;
+    result += `<div class="box"><span class="title">Square Root of 81:</span> ${Math.sqrt(81)}</div>`;
+    result += `<div class="box"><span class="title">Round (4.7):</span> ${Math.round(4.7)}</div>`;
+    result += `<div class="box"><span class="title">Ceil (4.2):</span> ${Math.ceil(4.2)}</div>`;
+    result += `<div class="box"><span class="title">Floor (4.9):</span> ${Math.floor(4.9)}</div>`;
+    result += `<div class="box"><span class="title">Random (0–1):</span> ${Math.random()}</div>`;
+    result += `<div class="box"><span class="title">Max of (10, 25, 5):</span> ${Math.max(10,25,5)}</div>`;
+    result += `<div class="box"><span class="title">Min of (10, 25, 5):</span> ${Math.min(10,25,5)}</div>`;
+
+    document.getElementById("output").innerHTML = result;
+  </script>
+
+</body>
+</html>

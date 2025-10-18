@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Style Levels</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" type="text/css" href="external.css">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            background-color: #f0f8ff;   /* selector: body | property: background-color | value: #f0f8ff */
+        }
+        h2 {
+            color: brown;                /* selector: h2 | property: color | value: brown */
+            text-decoration: underline;  /* selector: h2 | property: text-decoration | value: underline */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Styled with External CSS -->
+    <h1>External CSS Example</h1>
+
+    <!-- Styled with Internal CSS -->
+    <h2>Internal CSS Example</h2>
+
+    <!-- Styled with Inline CSS -->
+    <p style="color: red; font-size: 20px; font-weight: bold;">
+        Inline CSS Example  
+        (selector: p | properties: color, font-size, font-weight | values: red, 20px, bold)
+    </p>
+
+    <!-- Styled with External CSS -->
+    <p>This paragraph is styled using External CSS file.</p>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Background Color References Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* 1. Color name */
+        .bg-color-name {
+            background-color: red;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        /* 2. Hex code */
+        .bg-color-hex {
+            background-color: #00ff00;
+            color: black;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        /* 3. RGB */
+        .bg-color-rgb {
+            background-color: rgb(0, 0, 255);
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        /* 4. RGBA (with transparency) */
+        .bg-color-rgba {
+            background-color: rgba(255, 165, 0, 0.7); /* semi-transparent orange */
+            color: black;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        /* 5. HSL */
+        .bg-color-hsl {
+            background-color: hsl(300, 100%, 50%); /* purple */
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        /* 6. HSLA (with transparency) */
+        .bg-color-hsla {
+            background-color: hsla(120, 100%, 25%, 0.8); /* dark green with opacity */
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Background Color References Demo</h1>
+
+    <p class="bg-color-name">Background color using color name (red).</p>
+    <p class="bg-color-hex">Background color using hex code (#00ff00).</p>
+    <p class="bg-color-rgb">Background color using RGB (rgb(0,0,255)).</p>
+    <p class="bg-color-rgba">Background color using RGBA (rgba(255,165,0,0.7)).</p>
+    <p class="bg-color-hsl">Background color using HSL (hsl(300,100%,50%)).</p>
+    <p class="bg-color-hsla">Background color using HSLA (hsla(120,100%,25%,0.8)).</p>
+
+</body>
+</html>

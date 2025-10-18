@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Regex Object Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f9f9;
+      margin: 40px;
+      color: #2c3e50;
+    }
+    h1 {
+      text-align: center;
+      color: #16a085;
+    }
+    .box {
+      background: #d1f2eb;
+      border: 2px solid #16a085;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px auto;
+      width: 70%;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .title {
+      font-weight: bold;
+      color: #117a65;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Regex Object Properties & Methods</h1>
+
+  <div id="output"></div>
+
+  <script>
+    let result = "";
+
+    // Example string
+    let text = "My email is example@gmail.com and website is https://example.com";
+
+    // Regex patterns
+    let emailRegex = /\w+@\w+\.\w+/;
+    let urlRegex = /https?:\/\/[^\s]+/;
+
+    // Properties: source, flags
+    result += `<div class="box"><span class="title">Regex source:</span> ${emailRegex.source}</div>`;
+    result += `<div class="box"><span class="title">Regex flags:</span> ${emailRegex.flags}</div>`;
+
+    // Method: test()
+    result += `<div class="box"><span class="title">test():</span> Email exists? ${emailRegex.test(text)}</div>`;
+
+    // Method: exec()
+    let execResult = emailRegex.exec(text);
+    result += `<div class="box"><span class="title">exec():</span> ${execResult}</div>`;
+
+    // Method: match()
+    let matchResult = text.match(urlRegex);
+    result += `<div class="box"><span class="title">match():</span> ${matchResult}</div>`;
+
+    // Method: replace()
+    let replacedText = text.replace(emailRegex, "hidden@example.com");
+    result += `<div class="box"><span class="title">replace():</span> ${replacedText}</div>`;
+
+    // Method: search()
+    let searchIndex = text.search(urlRegex);
+    result += `<div class="box"><span class="title">search():</span> URL starts at index ${searchIndex}</div>`;
+
+    document.getElementById("output").innerHTML = result;
+  </script>
+
+</body>
+</html>

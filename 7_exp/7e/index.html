@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String Object Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fef9f9;
+      margin: 40px;
+      color: #2c3e50;
+    }
+    h1 {
+      text-align: center;
+      color: #c0392b;
+    }
+    .box {
+      background: #fdecea;
+      border: 2px solid #e74c3c;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px auto;
+      width: 70%;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .title {
+      font-weight: bold;
+      color: #922b21;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>String Object Properties & Methods</h1>
+
+  <div id="output"></div>
+
+  <script>
+    let text = " Hello JavaScript ";
+
+    let result = "";
+
+    // Property
+    result += `<div class="box"><span class="title">Length:</span> ${text.length}</div>`;
+
+    // Methods
+    result += `<div class="box"><span class="title">toUpperCase():</span> ${text.toUpperCase()}</div>`;
+    result += `<div class="box"><span class="title">toLowerCase():</span> ${text.toLowerCase()}</div>`;
+    result += `<div class="box"><span class="title">charAt(6):</span> ${text.charAt(6)}</div>`;
+    result += `<div class="box"><span class="title">indexOf("Java"):</span> ${text.indexOf("Java")}</div>`;
+    result += `<div class="box"><span class="title">slice(1, 6):</span> ${text.slice(1,6)}</div>`;
+    result += `<div class="box"><span class="title">substring(1, 6):</span> ${text.substring(1,6)}</div>`;
+    result += `<div class="box"><span class="title">substr(1, 6):</span> ${text.substr(1,6)}</div>`;
+    result += `<div class="box"><span class="title">replace("JavaScript","World"):</span> ${text.replace("JavaScript","World")}</div>`;
+    result += `<div class="box"><span class="title">trim():</span> "${text.trim()}"</div>`;
+    result += `<div class="box"><span class="title">split(" "):</span> ${text.split(" ")}</div>`;
+    result += `<div class="box"><span class="title">concat(" Rocks!"):</span> ${text.concat(" Rocks!")}</div>`;
+
+    document.getElementById("output").innerHTML = result;
+  </script>
+
+</body>
+</html>

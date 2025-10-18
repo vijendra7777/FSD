@@ -1,0 +1,10 @@
+
+/* External CSS */
+h1 {
+    color: darkblue;              /* selector: h1 | property: color | value: darkblue */
+    text-align: center;           /* selector: h1 | property: text-align | value: center */
+}
+p {
+    font-size: 18px;              /* selector: p | property: font-size | value: 18px */
+    color: green;                 /* selector: p | property: color | value: green */
+}

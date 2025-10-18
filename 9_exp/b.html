@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Operations</title>
+    <script>
+        function factorial(n) {
+            let f = 1;
+            for (let i = 1; i <= n; i++) f *= i;
+            return f;
+        }
+
+        function fibonacci(n) {
+            let a = 0, b = 1, series = [];
+            while (a <= n) {
+                series.push(a);
+                [a, b] = [b, a + b];
+            }
+            return series.join(", ");
+        }
+
+        function primes(n) {
+            let res = [];
+            for (let i = 2; i <= n; i++) {
+                let isPrime = true;
+                for (let j = 2; j <= Math.sqrt(i); j++)
+                    if (i % j === 0) { isPrime = false; break; }
+                if (isPrime) res.push(i);
+            }
+            return res.join(", ");
+        }
+
+        function palindrome(n) {
+            let s = n.toString();
+            return s === s.split("").reverse().join("") ? "Palindrome" : "Not Palindrome";
+        }
+
+        function showResult(type) {
+            let n = parseInt(document.getElementById("num").value);
+            if (isNaN(n)) { document.getElementById("res").innerHTML = "Enter a number"; return; }
+            let output = "";
+            if (type === "fact") output = "Factorial: " + factorial(n);
+            else if (type === "fib") output = "Fibonacci: " + fibonacci(n);
+            else if (type === "prime") output = "Primes: " + primes(n);
+            else if (type === "pal") output = "Palindrome: " + palindrome(n);
+            document.getElementById("res").innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+    <h2 style="text-align:center;">Number Operations</h2>
+    <div style="text-align:center; margin-top:20px;">
+        <input type="number" id="num" placeholder="Enter number" style="padding:5px; font-size:16px;"><br><br>
+        <button onclick="showResult('fact')">Factorial</button>
+        <button onclick="showResult('fib')">Fibonacci</button>
+        <button onclick="showResult('prime')">Prime</button>
+        <button onclick="showResult('pal')">Palindrome</button>
+    </div>
+    <p id="res" style="text-align:center; font-size:18px; color:blue; margin-top:20px;"></p>
+</body>
+</html>

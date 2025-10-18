@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Input Methods</title>
+</head>
+<body>
+    <h1>JavaScript Input Demo</h1>
+
+    <!-- HTML Form Input -->
+    <p>Enter your name:</p>
+    <input type="text" id="nameInput">
+    <button onclick="getInputFromField()">Submit</button>
+
+    <p id="output"></p>
+
+    <script>
+        // 1. Taking input using prompt()
+        let userAge = prompt("Enter your age:");
+        alert("You entered age: " + userAge);
+
+        // 2. Taking input using confirm()
+        let isStudent = confirm("Are you a student?");
+        if (isStudent) {
+            console.log("User confirmed they are a student.");
+        } else {
+            console.log("User is not a student.");
+        }
+
+        // 3. Taking input using an HTML form input field
+        function getInputFromField() {
+            let name = document.getElementById("nameInput").value;
+            document.getElementById("output").innerHTML = "Hello, " + name + "!";
+        }
+    </script>
+</body>
+</html>

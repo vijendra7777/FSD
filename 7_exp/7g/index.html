@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date Object Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f8ff;
+      margin: 40px;
+      color: #2c3e50;
+    }
+    h1 {
+      text-align: center;
+      color: #2980b9;
+    }
+    .box {
+      background: #ecf0f1;
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px auto;
+      width: 70%;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .title {
+      font-weight: bold;
+      color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Date Object Example</h1>
+
+  <div id="output"></div>
+
+  <script>
+    let now = new Date();
+    let result = "";
+
+    result += `<div class="box"><span class="title">Current Date & Time:</span> ${now}</div>`;
+    result += `<div class="box"><span class="title">Year:</span> ${now.getFullYear()}</div>`;
+    result += `<div class="box"><span class="title">Month (0-11):</span> ${now.getMonth()}</div>`;
+    result += `<div class="box"><span class="title">Date (Day of Month):</span> ${now.getDate()}</div>`;
+    result += `<div class="box"><span class="title">Day (0-Sunday to 6-Saturday):</span> ${now.getDay()}</div>`;
+    result += `<div class="box"><span class="title">Hours:</span> ${now.getHours()}</div>`;
+    result += `<div class="box"><span class="title">Minutes:</span> ${now.getMinutes()}</div>`;
+    result += `<div class="box"><span class="title">Seconds:</span> ${now.getSeconds()}</div>`;
+    result += `<div class="box"><span class="title">Milliseconds:</span> ${now.getMilliseconds()}</div>`;
+    result += `<div class="box"><span class="title">Timestamp (ms since Jan 1, 1970):</span> ${now.getTime()}</div>`;
+
+    // Setting a future date
+    let future = new Date();
+    future.setFullYear(2030);
+    future.setMonth(11); // December
+    future.setDate(25);
+    result += `<div class="box"><span class="title">Future Date:</span> ${future}</div>`;
+
+    document.getElementById("output").innerHTML = result;
+  </script>
+
+</body>
+</html>

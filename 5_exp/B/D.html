@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Box Model Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .box {
+            width: 200px;                /* content width */
+            height: 100px;               /* content height */
+            padding: 20px;               /* space between content and border */
+            border: 5px solid #3498db;   /* border thickness and color */
+            margin: 30px;                /* space outside the border */
+            background-color: #ecf0f1;  /* content + padding area background */
+            text-align: center;
+            line-height: 100px;          /* center text vertically in content */
+        }
+
+        .labels {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Box Model Demo</h1>
+
+    <div class="box">
+        Content
+    </div>
+
+    <div class="labels">
+        <p><strong>Content:</strong> The area where your text or image appears.</p>
+        <p><strong>Padding:</strong> Space between content and border.</p>
+        <p><strong>Border:</strong> Surrounds the padding and content.</p>
+        <p><strong>Margin:</strong> Space outside the border, separating the box from other elements.</p>
+    </div>
+
+</body>
+</html>

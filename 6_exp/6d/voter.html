@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voter Eligibility Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #555;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        caption {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Voter Eligibility Result</h2>
+
+<div id="voterTable"></div>
+
+<script>
+    // Take input from user
+    let name = prompt("Enter your name:");
+    let ageInput = prompt("Enter your age:");
+
+    // Convert age to number
+    let age = parseInt(ageInput);
+
+    // Determine voting eligibility
+    let eligibility = "";
+
+    if (isNaN(age) || age <= 0) {
+        eligibility = "Invalid age entered.";
+    } else if (age >= 18) {
+        eligibility = "✅ Eligible to Vote";
+    } else {
+        eligibility = "❌ Not Eligible to Vote";
+    }
+
+    // Display the result in a table
+    let output = `
+        <table>
+            <caption>Voter Information</caption>
+            <tr>
+                <th>Name</th>
+                <td>${name || 'N/A'}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>${isNaN(age) ? 'Invalid' : age}</td>
+            </tr>
+            <tr>
+                <th>Eligibility</th>
+                <td>${eligibility}</td>
+            </tr>
+        </table>
+    `;
+
+    document.getElementById("voterTable").innerHTML = output;
+</script>
+
+</body>
+</html>

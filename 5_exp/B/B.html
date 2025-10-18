@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tilted Watermark Example</title>
+    <style>
+        body {
+            margin: 0;
+            height: 2000px; /* allow scrolling */
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        /* Watermark as pseudo-element */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;              /* halfway down */
+            left: 50%;
+            width: 500px;          /* watermark width */
+            height: 300px;         /* watermark height */
+            background: url("image_1.jpg") no-repeat center center;
+            background-size: contain;
+            transform: translate(-50%, -50%) rotate(-10deg); /* flip horizontally */
+            opacity: 0.2;          /* faint like watermark */
+            z-index: -1;           /* stays behind text */
+            pointer-events: none;  /* doesn't block clicks */
+        }
+
+        h1, p {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tilted Watermark Example</h1>
+    <p>Scroll the page — the watermark stays fixed and horizontally tilted.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere dui ut dui eleifend, ut suscipit nulla hendrerit.</p>
+    <p>Keep scrolling… the tilted watermark remains halfway down the viewport.</p>
+</body>
+</html>

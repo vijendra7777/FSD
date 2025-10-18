@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Operations</title>
+    <script>
+        function calculate() {
+            let num = parseInt(document.getElementById("number").value);
+            if (isNaN(num)) return;
+
+            // Factorial
+            let fact = 1;
+            for (let i = 1; i <= num; i++) fact *= i;
+
+            // Fibonacci
+            let fib = [];
+            let a = 0, b = 1;
+            if (num >= 0) fib.push(a);
+            if (num >= 1) fib.push(b);
+            while (true) {
+                let next = a + b;
+                if (next > num) break;
+                fib.push(next);
+                a = b;
+                b = next;
+            }
+
+            // Prime numbers
+            let primes = [];
+            for (let i = 2; i <= num; i++) {
+                let isPrime = true;
+                for (let j = 2; j <= Math.sqrt(i); j++) {
+                    if (i % j === 0) { isPrime = false; break; }
+                }
+                if (isPrime) primes.push(i);
+            }
+
+            // Palindrome
+            let str = num.toString();
+            let palindrome = str === str.split("").reverse().join("") ? "Yes" : "No";
+
+            // Display results
+            document.getElementById("result").innerHTML = `
+                <b>Factorial:</b> ${fact} <br>
+                <b>Fibonacci:</b> ${fib.join(", ")} <br>
+                <b>Prime Numbers:</b> ${primes.join(", ")} <br>
+                <b>Palindrome:</b> ${palindrome}
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h2 style="text-align:center;">Number Operations</h2>
+    <div style="text-align:center; margin-top:20px;">
+        <input type="number" id="number" placeholder="Enter a number" 
+               style="padding:8px; font-size:16px;" oninput="calculate()">
+    </div>
+    <p id="result" style="text-align:center; font-size:18px; color:blue; margin-top:20px;"></p>
+</body>
+</html>

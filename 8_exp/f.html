@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Denomination Calculator</title>
+    <script>
+        function calculateDenomination() {
+            let amount = parseInt(document.getElementById("amount").value);
+            let originalAmount = amount;
+
+            // Denominations array
+            const denominations = [100, 50, 20, 10, 5, 2, 1];
+            let result = [];
+
+            for (let i = 0; i < denominations.length; i++) {
+                let count = Math.floor(amount / denominations[i]);
+                if (count > 0) {
+                    result.push(count + " - " + denominations[i] + "’s");
+                    amount = amount % denominations[i];
+                }
+            }
+
+            // Display result
+            document.getElementById("result").innerHTML = 
+                "Amount Rs." + originalAmount + " can be given as:<br>" + result.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <h2 style="text-align:center;">Bank Denomination Calculator</h2>
+
+    <div style="text-align:center; margin-top:30px;">
+        <input type="number" id="amount" placeholder="Enter amount" style="padding:8px; font-size:16px;">
+        <button onclick="calculateDenomination()" style="padding:8px 16px; font-size:16px;">Calculate</button>
+    </div>
+
+    <p id="result" style="text-align:center; font-size:18px; color:green; margin-top:20px;"></p>
+</body>
+</html>

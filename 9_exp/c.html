@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form Validation</title>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let mobile = document.getElementById("mobile").value;
+            let email = document.getElementById("email").value;
+
+            let nameRegex = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+            if (!nameRegex.test(name)) {
+                alert("Invalid Name: Must start with alphabet and contain at least 6 characters");
+                return false;
+            }
+
+            let mobileRegex = /^[0-9]{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                alert("Invalid Mobile: Must be 10 digits");
+                return false;
+            }
+
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid Email: Must be in format xxxxx@xxxx.xxx");
+                return false;
+            }
+
+            alert("Registration Successful!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2 style="text-align:center;">Registration Form</h2>
+    <form onsubmit="return validateForm()" style="text-align:center; margin-top:20px;">
+        <input type="text" id="name" placeholder="Name" style="padding:8px; font-size:16px;"><br><br>
+        <input type="text" id="mobile" placeholder="Mobile" style="padding:8px; font-size:16px;"><br><br>
+        <input type="text" id="email" placeholder="Email" style="padding:8px; font-size:16px;"><br><br>
+        <input type="submit" value="Register" style="padding:8px 16px; font-size:16px;">
+    </form>
+</body>
+</html>

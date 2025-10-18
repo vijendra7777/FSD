@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Window Object Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 40px;
+      background: #f0f8ff;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    button {
+      margin: 8px;
+      padding: 10px 18px;
+      border: none;
+      background: #16a085;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #13856d;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px dashed #16a085;
+      background: #ecf0f1;
+      border-radius: 10px;
+      min-height: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Window Object Properties & Methods</h1>
+
+  <button onclick="showDimensions()">Show Window Dimensions</button>
+  <button onclick="showLocation()">Show Current URL</button>
+  <button onclick="openNewWindow()">Open New Window</button>
+  <button onclick="closeNewWindow()">Close New Window</button>
+  <button onclick="delayedMessage()">Show Delayed Message</button>
+
+  <div id="output">👉 Click a button to see results here</div>
+
+  <script>
+    let newWin; // reference for new window
+
+    // Property: innerWidth & innerHeight
+    function showDimensions() {
+      document.getElementById("output").innerHTML =
+        "📏 Window Dimensions: " + window.innerWidth + " x " + window.innerHeight;
+    }
+
+    // Property: location.href
+    function showLocation() {
+      document.getElementById("output").innerHTML =
+        "🌐 Current URL: " + window.location.href;
+    }
+
+    // Method: window.open()
+    function openNewWindow() {
+      newWin = window.open("https://www.google.com", "_blank", "width=400,height=400");
+      document.getElementById("output").innerHTML = "🆕 Opened a new window (Google)";
+    }
+
+    // Method: window.close()
+    function closeNewWindow() {
+      if (newWin) {
+        newWin.close();
+        document.getElementById("output").innerHTML = "❌ New window closed!";
+      } else {
+        document.getElementById("output").innerHTML = "⚠️ No window to close!";
+      }
+    }
+
+    // Method: setTimeout()
+    function delayedMessage() {
+      document.getElementById("output").innerHTML = "⏳ Wait 2 seconds...";
+      setTimeout(function () {
+        alert("⌛ This is a delayed message using setTimeout()");
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>

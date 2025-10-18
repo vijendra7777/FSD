@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Object Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdf6e3;
+      margin: 40px;
+      color: #2c3e50;
+    }
+    h1 {
+      text-align: center;
+      color: #d35400;
+    }
+    .box {
+      background: #fff3e0;
+      border: 2px solid #e67e22;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px auto;
+      width: 70%;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .title {
+      font-weight: bold;
+      color: #e67e22;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Array Object Properties & Methods</h1>
+
+  <div id="output"></div>
+
+  <script>
+    let fruits = ["Apple", "Banana", "Mango"];
+    let result = "";
+
+    // Property: length
+    result += `<div class="box"><span class="title">Length:</span> ${fruits.length}</div>`;
+
+    // Method: push()
+    fruits.push("Orange");
+    result += `<div class="box"><span class="title">After push (Orange):</span> ${fruits}</div>`;
+
+    // Method: pop()
+    let removed = fruits.pop();
+    result += `<div class="box"><span class="title">After pop (Removed: ${removed}):</span> ${fruits}</div>`;
+
+    // Method: shift()
+    removed = fruits.shift();
+    result += `<div class="box"><span class="title">After shift (Removed: ${removed}):</span> ${fruits}</div>`;
+
+    // Method: unshift()
+    fruits.unshift("Grapes");
+    result += `<div class="box"><span class="title">After unshift (Added Grapes):</span> ${fruits}</div>`;
+
+    // Method: join()
+    let joined = fruits.join(" | ");
+    result += `<div class="box"><span class="title">Join with '|':</span> ${joined}</div>`;
+
+    // Method: sort()
+    fruits.sort();
+    result += `<div class="box"><span class="title">Sorted Array:</span> ${fruits}</div>`;
+
+    document.getElementById("output").innerHTML = result;
+  </script>
+
+</body>
+</html>

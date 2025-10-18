@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selector Forms Example</title>
+    <style>
+       
+        h1 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        
+        #unique-paragraph {
+            color: green;
+            font-weight: bold;
+        }
+
+        
+        .highlight {
+            background-color: yellow;
+        }
+
+    
+        h2, h3 {
+            font-family: Arial, sans-serif;
+            color: darkred;
+        }
+
+        
+        * {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        
+        div p {
+            font-size: 16px;
+        }
+
+        
+        div > p {
+            border: 1px solid black;
+        }
+
+        
+        h2 + p {
+            color: purple;
+        }
+
+        
+        h2 ~ p {
+            font-style: italic;
+        }
+
+        
+        a:hover {
+            color: orange;
+            text-decoration: underline;
+        }
+
+        
+        p::first-letter {
+            font-size: 24px;
+            color: red;
+        }
+
+        
+        a[target="_blank"] {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <h1>CSS Selector Forms Demo</h1>
+    <h2>Heading Level 2</h2>
+    <h3>Heading Level 3</h3>
+
+    <p id="unique-paragraph">This paragraph uses an ID selector.</p>
+    <p class="highlight">This paragraph uses a class selector.</p>
+    <p>This paragraph is a normal element selector.</p>
+
+    
+    <div>
+        <p>Paragraph inside a div (descendant & child selector).</p>
+        <p class="highlight">Another paragraph inside the div.</p>
+    </div>
+
+    <h2>Sibling Heading</h2>
+    <p>Adjacent sibling paragraph.</p>
+    <p>General sibling paragraph.</p>
+
+    
+    <a href="https://www.google.com">Normal Link</a> |
+    <a href="https://www.github.com" target="_blank">Open in new tab</a>
+
+    
+    <p>This paragraph demonstrates pseudo-element ::first-letter.</p>
+
+</body>
+</html>

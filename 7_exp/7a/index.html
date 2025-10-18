@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Object Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 40px;
+      background: #f0f8ff;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    button {
+      margin: 8px;
+      padding: 10px 16px;
+      border: none;
+      background: #3498db;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      border: 2px dashed #3498db;
+      background: #ecf0f1;
+      min-height: 60px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Document Object Demo</h1>
+  
+  <button onclick="showTitle()">Show Title</button>
+  <button onclick="showURL()">Show URL</button>
+  <button onclick="changeBG()">Change Background</button>
+  <button onclick="createElementDemo()">Create Element</button>
+
+  <div id="output">👉 Result will be displayed here</div>
+
+  <script>
+    function showTitle() {
+      document.getElementById("output").innerText = "Document Title: " + document.title;
+    }
+
+    function showURL() {
+      document.getElementById("output").innerText = "Document URL: " + document.URL;
+    }
+
+    function changeBG() {
+      document.body.style.background = "#ffeaa7";
+      document.getElementById("output").innerText = "Background color changed!";
+    }
+
+    function createElementDemo() {
+      let newPara = document.createElement("p");
+      newPara.innerText = "✅ New paragraph created using document.createElement()";
+      newPara.style.color = "green";
+      document.getElementById("output").appendChild(newPara);
+    }
+  </script>
+
+</body>
+</html>

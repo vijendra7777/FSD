@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Output Methods</title>
+</head>
+<body>
+    <h1>JavaScript Output Demo</h1>
+
+    <!-- This is where we'll use innerHTML -->
+    <p id="output"></p>
+
+    <script>
+        // 1. alert() - Displays an alert dialog box
+        alert("This is an alert message!");
+
+        // 2. console.log() - Logs output to the browser console
+        console.log("This is a message in the console.");
+
+        // 3. document.write() - Writes directly to the page (not recommended after page load)
+        document.write("This text is written using document.write().<br>");
+
+        // 4. innerHTML - Writes content to a specific HTML element
+        document.getElementById("output").innerHTML = "This message was added using innerHTML.";
+    </script>
+</body>
+</html>

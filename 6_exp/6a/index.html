@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internal and External JavaScript Example</title>
+
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
+
+    <!-- Internal JavaScript -->
+    <script>
+        // This is internal JavaScript
+        function internalFunction() {
+            alert("Hello from Internal JavaScript!");
+        }
+
+        // Call both functions when the page loads
+        window.onload = function () {
+            internalFunction();
+            externalFunction();
+        };
+    </script>
+</head>
+<body>
+    <h1>JavaScript Demo</h1>
+    <button onclick="internalFunction()">Call Internal JS</button>
+    <button onclick="externalFunction()">Call External JS</button>
+</body>
+</html>
