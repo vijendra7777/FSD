@@ -1,27 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Iframe Example</title>
-  <style>
-    .frame-container {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-    iframe {
-      border: 2px solid black;
-      width: 100%;
-    }
-    #frame1 { height: 30%; }
-    #frame2 { height: 40%; }
-    #frame3 { height: 30%; }
-  </style>
+  <meta charset="UTF-8">
+  <title>Working of Tables - Timetable</title>
 </head>
 <body>
-<div class="frame-container">
-  <iframe id="frame1" srcdoc='<h3>Image Frame</h3><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBUuutpYgsmwvhlWm2BFoFROhQSg81yqmf_w&s" alt="Sample Image">' ></iframe>
-  <iframe id="frame2" srcdoc='<h3>Paragraph Frame</h3><p>This is a sample paragraph inside the second frame. Frames allow dividing the browser window into multiple sections, each showing different content.</p>' ></iframe>
-  <iframe id="frame3" srcdoc='<h3>Hyperlinks Frame</h3><a href="https://www.google.com" target="_blank">Google</a><br><a href="https://www.wikipedia.org" target="_blank">Wikipedia</a><br><a href="https://www.github.com" target="_blank">GitHub</a>' ></iframe>
-</div>
+  <table border="2" cellspacing="5" cellpadding="8" align="center">
+    <caption><b>III IT B.Tech Timetable</b></caption>
+    <tr>
+      <th>Day / Period</th>
+      <th>09:00 - 10:00</th>
+      <th>10:00 - 11:00</th>
+      <th>11:00 - 11:10</th>
+      <th>11:10 - 12:10</th>
+      <th>12:10 - 01:10</th>
+      <th>01:10 - 02:10</th>
+      <th>02:10 - 03:10</th>
+      <th>03:10 - 04:30</th>
+    </tr>
+    <tr>
+      <td>Monday</td>
+      <td>AT&amp;CD</td>
+      <td>DWDM</td>
+      <td rowspan="6">Break</td>
+      <td>AOR</td>
+      <td>AJ</td>
+      <td rowspan="6">Lunch</td>
+      <td>AJ Lab (R&amp;D Project Lab)</td>
+      <td>AJ</td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td>CN</td>
+      <td>TPL</td>
+      <td>DWDM</td>
+      <td>AOR</td>
+      <td>AT&amp;CD</td>
+      <td>AJ</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td>AJ</td>
+      <td>CN</td>
+      <td>TT</td>
+      <td>Sports</td>
+      <td colspan="3">CN Lab (R&amp;D Project Lab)</td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td>Communication Skills</td>
+      <td>AOR</td>
+      <td>AT&amp;CD</td>
+      <td>AJ</td>
+      <td>CN</td>
+      <td>MATHS</td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td>DWDM</td>
+      <td>CN</td>
+      <td colspan="2">UI Lab (R&amp;D Project Lab)</td>
+      <td colspan="2">Aptitude</td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td>AOR</td>
+      <td>FST</td>
+      <td colspan="2">FSD 1 Lab (IT Computer Lab)</td>
+      <td>DWDM</td>
+      <td>AT&amp;CD</td>
+    </tr>
+  </table>
 </body>
 </html>
+
